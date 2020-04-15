@@ -36,6 +36,7 @@ data = {}
 #filling the data dictionary
 data['castle'] = matchChecker(re.findall('[🦅🦈🐉🐺🦌🥔🌑]{1}', cwMsg), 'string')
 data['guildemoji'] = matchChecker(re.findall('(?<=[🦅🦈🐉🐺🦌🥔🌑]{1}).+(?=\[)', cwMsg), 'string')
+data['guildtag'] = matchChecker(re.findall('(?<=\[).{2,3}(?=\])', cwMsg), 'string')
 data['username'] = matchChecker(re.findall('(?<=[\]|🦅🦈🐉🐺🦌🥔🌑])[a-zA-Z]+(?= Knight| Ranger| Sentinel| Collector| Alchemist| Blacksmith| Esquire| Master of)', cwMsg), 'string')
 data['class'] = matchChecker(re.findall('Knight|Ranger|Sentinel|Collector|Alchemist|Blacksmith|Esquire|Master{1}', cwMsg), 'string')
 data['level'] = matchChecker(re.findall('(?<=🏅Level: )[0-9]{1,2}', cwMsg), 'string')
